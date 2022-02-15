@@ -14,7 +14,7 @@ services:
     volumes:
       - ./assets:/opt/selenium/assets
       - ./config.toml:/opt/bin/config.toml
-      - ./alllib:/libs
+      - ./javaagent:/libs
     depends_on:
       - selenium-hub
     environment:
@@ -32,7 +32,7 @@ services:
     image: selenium/hub:4.1.2-20220208
     container_name: selenium-hub
     volumes:
-      - ./alllib:/libs/
+      - ./javaagent:/libs/
     ports:
       - "4442:4442"
       - "4443:4443"

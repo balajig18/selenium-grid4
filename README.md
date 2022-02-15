@@ -1,4 +1,4 @@
 # selenium-grid4
- Selenium Grid with Opentelementry tracing using Jaeger
+ Selenium Grid with Opentelemetry tracing using Jaeger
 
  
