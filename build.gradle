@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+
+repositories {
+  mavenCentral()
+}
+
+dependencies{
+  implementation 'io.opentelemetry:opentelemetry-exporter-jaeger:0.14.1'
+  implementation group: 'io.grpc', name: 'grpc-netty', version: '1.44.0'
+  implementation group: 'io.opentelemetry.javaagent', name: 'opentelemetry-javaagent', version: '1.11.0'
+}
+
+
+task copyToLib(type: Copy) {
+    into "./lib"
+    from configurations.runtimeClasspath
+}
+
+build.dependsOn(copyToLib)
